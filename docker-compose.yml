@@ -33,3 +33,14 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - ./data:/home/developer
       - /dev/snd:/dev/snd
+  nautilus-md:
+    image: local/nautilus-md
+    build: docker/images/Nautilus
+    depends_on:
+      - base-md
+    privileged: true
+    container_name: nautilus-md
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ./data:/home/developer
+      - /dev/snd:/dev/snd
