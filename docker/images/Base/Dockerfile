@@ -11,6 +11,8 @@ RUN apt-get update -y && apt-get upgrade -y
 
 # INSTALL FONTS AND COMMON LIBRARIES
 
+RUN DEBIAN_FRONTEND=noninteractive apt-get install keyboard-configuration -y
+
 RUN apt install fonts-liberation libasound2 libatk-bridge2.0-0 libatk1.0-0 libatspi2.0-0 libcairo2 libcups2 libcurl4 libdbus-1-3 libdrm2 libexpat1 libgbm1 libglib2.0-0 libgtk-3-0 libnspr4 libnss3 libpango-1.0-0 libx11-6 libxcb1 libxcomposite1 libxdamage1 libxext6 libxfixes3 libxkbcommon0 libxrandr2 xdg-utils -y
 RUN apt install wget curl -y
 

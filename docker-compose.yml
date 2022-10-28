@@ -44,3 +44,14 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - ./data:/home/developer
       - /dev/snd:/dev/snd
+  audacity-md:
+    image: local/audacity-md
+    build: docker/images/Audacity
+    depends_on:
+      - base-md
+    privileged: true
+    container_name: audacity-md
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ./data:/home/developer
+      - /dev/snd:/dev/snd
