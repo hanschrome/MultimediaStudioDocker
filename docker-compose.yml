@@ -22,3 +22,14 @@ services:
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - ./data:/home/developer
+  openshot-md:
+    image: local/openshot-md
+    build: docker/images/Openshot
+    depends_on:
+      - base-md
+    privileged: true
+    container_name: openshot-md
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ./data:/home/developer
+      - /dev/snd:/dev/snd
