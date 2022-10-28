@@ -12,3 +12,13 @@ services:
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - ./data:/home/developer
+  gimp-md:
+    image: local/gimp-md
+    build: docker/images/Gimp
+    depends_on:
+      - base-md
+    privileged: true
+    container_name: gimp-md
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ./data:/home/developer

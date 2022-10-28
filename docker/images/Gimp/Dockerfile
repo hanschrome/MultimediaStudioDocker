@@ -1,9 +1,9 @@
 FROM local/base-md
 
-# INSTALL INKSCAPE
+# INSTALL GIMP
 
 RUN apt-get install -y \
-	inkscape \
+	gimp \
 	--no-install-recommends
 
 ENV DISPLAY=:0
@@ -11,4 +11,4 @@ ENV DISPLAY=:0
 USER developer
 ENV HOME /home/developer
 
-ENTRYPOINT [ "inkscape" ]
+ENTRYPOINT [ "gimp" ]
