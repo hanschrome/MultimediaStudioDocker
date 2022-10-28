@@ -55,3 +55,14 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - ./data:/home/developer
       - /dev/snd:/dev/snd
+  subtitle-edit-md:
+    image: local/subtitle-edit-md
+    build: docker/images/SubtitleEdit
+    depends_on:
+      - base-md
+    privileged: true
+    container_name: subtitle-edit-md
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ./data:/home/developer
+      - /dev/snd:/dev/snd
