@@ -66,3 +66,17 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - ./data:/home/developer
       - /dev/snd:/dev/snd
+  obs-md:
+    image: local/obs-md
+    build: docker/images/Obs
+    depends_on:
+      - base-md
+    privileged: true
+    container_name: obs-md
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ./data:/home/developer
+      - /dev/snd:/dev/snd
+      - /dev/video0:/dev/video0
+      - /dev/video1:/dev/video1
+      - /dev/video2:/dev/video2
